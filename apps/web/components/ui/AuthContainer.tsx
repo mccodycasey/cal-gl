@@ -20,7 +20,8 @@ export default function AuthContainer(props: React.PropsWithChildren<Props>) {
       <HeadSeo title={props.title} description={props.description} />
       {props.showLogo && (
         // eslint-disable-next-line @next/next/no-img-element
-        <img className="mb-auto h-4" src={LOGO} alt={`${APP_NAME} Logo`} />
+        // w-42 h-22 mb-auto are gl sizes to make logo look normal
+        <img className="w-42 h-22 mb-auto" src={LOGO} alt={`${APP_NAME} Logo`} />
       )}
 
       <div className={classNames(props.showLogo ? "text-center" : "", "sm:mx-auto sm:w-full sm:max-w-md")}>

@@ -1,8 +1,7 @@
 @import url("../../../packages/features/calendars/weeklyview/styles/styles.css");
 
 .sbdocs {
-  /*font-family: 'Inter var' !important;*/
-  font-family: "Nanum Gothic" !important;
+  font-family: 'Nanum Gothic' !important;
   padding: 0!important;
 }
 

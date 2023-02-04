@@ -4,13 +4,8 @@
 }
 
 @font-face {
-  /*font-family: "Inter var";*/
-  /*font-weight: 100 900;*/
-  /*font-display: swap;*/
-  /*font-style: normal;*/
   font-named-instance: "Regular";
-  /*src: url("/fonts/Inter-roman.var.woff2") format("woff2");*/
-  font-family: 'Nanum Gothic';
+  font-family: "Nanum Gothic";
   font-style: normal;
   font-weight: 400;
   font-display: swap;

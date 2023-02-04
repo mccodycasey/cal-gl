@@ -13,8 +13,8 @@ module.exports = {
   darkMode: "class",
   theme: {
     fontFamily: {
-      cal: ['"Nanum Gothic", "Cal Sans"', "sans-serif"],
-      sans: ['"Nanum Gothic", "Inter var"', "sans-serif"],
+      cal: ['"Nanum Gothic", "Cal Sans", "sans-serif"'],
+      sans: ['"Nanum Gothic", "Inter var", "sans-serif"'],
     },
     extend: {
       colors: {

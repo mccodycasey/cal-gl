@@ -1,7 +1,8 @@
 @import url("../../../packages/features/calendars/weeklyview/styles/styles.css");
 
 .sbdocs {
-  font-family: 'Inter var' !important;
+  /*font-family: 'Inter var' !important;*/
+  font-family: "Nanum Gothic" !important;
   padding: 0!important;
 }
 
@@ -10,7 +11,7 @@
 }
 
 .sbdocs.sbdocs-h1 {
-  font-family: "Cal Sans", "sans-serif" !important;
+  font-family: "Nanum Gothic", "Cal Sans", "sans-serif" !important;
   font-weight: 600;
   font-size: 36px;
   margin: 0 0 82px 0;

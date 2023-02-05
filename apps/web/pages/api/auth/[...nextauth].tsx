@@ -5,6 +5,7 @@ import Handlebars from "handlebars";
 import * as jose from "jose";
 import NextAuth, { Session } from "next-auth";
 import { Provider } from "next-auth/providers";
+import CognitoProvider from "next-auth/providers/cognito";
 import CredentialsProvider from "next-auth/providers/credentials";
 import EmailProvider from "next-auth/providers/email";
 import GoogleProvider from "next-auth/providers/google";
@@ -38,6 +39,12 @@ const transporter = nodemailer.createTransport<TransportOptions>({
 const usernameSlug = (username: string) => slugify(username) + "-" + randomString(6).toLowerCase();
 
 const providers: Provider[] = [
+  CognitoProvider({
+    clientId: process.env.COGNITO_CLIENT_ID,
+    clientSecret: process.env.COGNITO_CLIENT_SECRET,
+    issuer: process.env.COGNITO_ISSUER,
+    idToken: true,
+  }),
   CredentialsProvider({
     id: "credentials",
     name: "Cal.com",
@@ -390,6 +397,10 @@ export default NextAuth({
       const { user, account, profile } = params;
 
       if (account?.provider === "email") {
+        return true;
+      }
+
+      if (account?.provider === "cognito") {
         return true;
       }
       // In this case we've already verified the credentials in the authorize

@@ -172,6 +172,11 @@
     }
   },
   "globalDependencies": [
+    "$COGNITO_CLIENT_ID",
+    "$COGNITO_CLIENT_SECRET",
+    "$COGNITO_ISSUER",
+    "$COGNITO_POOL_ID",
+    "$COGNITO_REGION",
     "$ANALYZE",
     "$API_KEY_PREFIX",
     "$NEXT_PUBLIC_API_URL",

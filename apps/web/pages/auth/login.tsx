@@ -124,6 +124,9 @@ export default function Login({
             : null
         }>
         <FormProvider {...methods}>
+          <Button color="secondary" className="w-full justify-center" onClick={() => signIn("cognito")}>
+            Sign in using your GhostLabel Account
+          </Button>
           <form onSubmit={methods.handleSubmit(onSubmit)} data-testid="login-form">
             <div>
               <input defaultValue={csrfToken || undefined} type="hidden" hidden {...register("csrfToken")} />

@@ -124,7 +124,7 @@ export default function Login({
             : null
         }>
         <FormProvider {...methods}>
-          <Button color="secondary" className="w-full justify-center" onClick={() => signIn("cognito")}>
+          <Button color="primary" className="w-full justify-center" onClick={() => signIn("cognito")}>
             Sign in using your GhostLabel Account
           </Button>
           <form onSubmit={methods.handleSubmit(onSubmit)} data-testid="login-form">
@@ -132,44 +132,48 @@ export default function Login({
               <input defaultValue={csrfToken || undefined} type="hidden" hidden {...register("csrfToken")} />
             </div>
             <div className="space-y-6">
-              <div className={classNames("space-y-6", { hidden: twoFactorRequired })}>
-                <EmailField
-                  id="email"
-                  label={t("email_address")}
-                  defaultValue={router.query.email as string}
-                  placeholder="john.doe@example.com"
-                  required
-                  {...register("email")}
-                />
-                <div className="relative">
-                  <div className="absolute -top-[6px]  z-10 ltr:right-0 rtl:left-0">
-                    <Link
-                      href="/auth/forgot-password"
-                      tabIndex={-1}
-                      className="text-sm font-medium text-gray-600">
-                      {t("forgot")}
-                    </Link>
-                  </div>
-                  <PasswordField
-                    id="password"
-                    autoComplete="off"
+              {isGoogleLoginEnabled && (
+                <div className={classNames("space-y-6", { hidden: twoFactorRequired })}>
+                  <EmailField
+                    id="email"
+                    label={t("email_address")}
+                    defaultValue={router.query.email as string}
+                    placeholder="john.doe@example.com"
                     required
-                    className="mb-0"
-                    {...register("password")}
+                    {...register("email")}
                   />
+                  <div className="relative">
+                    <div className="absolute -top-[6px]  z-10 ltr:right-0 rtl:left-0">
+                      <Link
+                        href="/auth/forgot-password"
+                        tabIndex={-1}
+                        className="text-sm font-medium text-gray-600">
+                        {t("forgot")}
+                      </Link>
+                    </div>
+                    <PasswordField
+                      id="password"
+                      autoComplete="off"
+                      required
+                      className="mb-0"
+                      {...register("password")}
+                    />
+                  </div>
                 </div>
-              </div>
+              )}
 
               {twoFactorRequired && <TwoFactor center />}
 
               {errorMessage && <Alert severity="error" title={errorMessage} />}
-              <Button
-                type="submit"
-                color="primary"
-                disabled={formState.isSubmitting}
-                className="w-full justify-center">
-                {twoFactorRequired ? t("submit") : t("sign_in")}
-              </Button>
+              {isGoogleLoginEnabled && (
+                <Button
+                  type="submit"
+                  color="primary"
+                  disabled={formState.isSubmitting}
+                  className="w-full justify-center">
+                  {twoFactorRequired ? t("submit") : t("sign_in")}
+                </Button>
+              )}
             </div>
           </form>
           {!twoFactorRequired && (

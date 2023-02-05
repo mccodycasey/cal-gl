@@ -36,7 +36,9 @@ export default function AuthContainer(props: React.PropsWithChildren<Props>) {
         <div className="mx-2 rounded-md border border-gray-200 bg-white px-4 py-10 sm:px-10">
           {props.children}
         </div>
-        <div className="mt-8 text-center text-sm text-gray-600">{props.footerText}</div>
+        <div className="mt-8 text-center text-sm text-gray-600">
+          <a href="https://www.ghostlabel.io/auth/sign-up">Don&apos;t have an account?</a>
+        </div>
       </div>
     </div>
   );

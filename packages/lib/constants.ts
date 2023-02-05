@@ -12,7 +12,7 @@ export const WEBAPP_URL =
 /** @deprecated use `WEBAPP_URL` */
 export const BASE_URL = WEBAPP_URL;
 export const WEBSITE_URL = process.env.NEXT_PUBLIC_WEBSITE_URL || "https://ghostlabel.io";
-export const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || "ghostlabel.io";
+export const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || "GhostLabel Calendar";
 export const SUPPORT_MAIL_ADDRESS = process.env.NEXT_PUBLIC_SUPPORT_MAIL_ADDRESS || "admin@ghostlabel.io";
 export const COMPANY_NAME = process.env.NEXT_PUBLIC_COMPANY_NAME || "GhostLabel Inc.";
 export const SENDER_ID = process.env.NEXT_PUBLIC_SENDER_ID || "GhostLabel";

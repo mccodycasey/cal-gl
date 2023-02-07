@@ -10,6 +10,7 @@ import { WEBSITE_URL } from "@calcom/lib/constants";
 import { useLocale } from "@calcom/lib/hooks/useLocale";
 import { EmailField, Label, PasswordField, TextField } from "@calcom/ui";
 
+// todo - add verification of new username being set
 const SetupFormStep1 = (props: { setIsLoading: (val: boolean) => void }) => {
   const router = useRouter();
   const { t } = useLocale();
